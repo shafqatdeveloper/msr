@@ -13,7 +13,7 @@ const Navbar = () => {
   return (
     <div className="w-full flex items-center justify-center">
       {/* Desktop Menu */}
-      <div className="hidden w-full pt-3 border-b-[0.2px] border-b-gray-800 pb-2.5 md:flex items-center justify-between">
+      <div className="hidden w-[75%] pt-3 border-b-[0.2px] border-b-gray-800 pb-2.5 md:flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-2">
           <h1>&lt;/&gt;</h1>
