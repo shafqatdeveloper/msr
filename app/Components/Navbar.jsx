@@ -53,7 +53,7 @@ const Navbar = () => {
         {/* Themes */}
         <div>Theme</div>
       </div>
-      <div className="w-full z-20 flex  items-center justify-between md:hidden py-2 px-3">
+      <div className="w-full flex  items-center justify-between md:hidden py-2 px-3">
         <div>code</div>
         <div>Logo</div>
         <div>
@@ -61,7 +61,7 @@ const Navbar = () => {
             <CiMenuFries />
           </button>
           {isNavOpen ? (
-            <div className="h-screen bg-white w-full text-black fixed top-0 left-0  duration-700">
+            <div className="h-screen bg-white w-full text-black  duration-700">
               <div className="w-full flex items-center justify-between md:hidden py-2 px-3">
                 <div>code</div>
                 <div>Logo</div>
@@ -71,7 +71,7 @@ const Navbar = () => {
               </div>
             </div>
           ) : (
-            <div className="h-screen bg-white text-black w-full fixed top-[-100%] duration-700 left-0"></div>
+            <div className="h-screen bg-white text-black w-full duration-700 "></div>
           )}
         </div>
       </div>
