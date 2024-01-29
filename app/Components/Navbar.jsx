@@ -11,11 +11,7 @@ import { HiOutlineSquares2X2 } from "react-icons/hi2";
 import Link from "next/link";
 import "./Navbar.css";
 const Navbar = () => {
-  const [isActive, setIsActive] = useState(false);
-
-  const toggleNavbar = () => {
-    setIsActive(!isActive);
-  };
+  let [open, setOpen] = useState(false);
   const navItems = [
     { name: "skills", icon: <LiaBuromobelexperte size={20} /> },
     { name: "projects", icon: <BiCube size={20} /> },
@@ -24,68 +20,47 @@ const Navbar = () => {
     { name: "resume", icon: <LiaClipboardListSolid size={20} /> },
   ];
   return (
-    <div className="bg-black border-b-[0.2px] border-b-gray-700 w-full mx-auto px-4 text-white">
-      {/* Logo */}
-      <div className="w-full h-12 md:flex items-center px-9 border-b-[1px] border-b-gray-700 justify-evenly hidden">
-        <div className="">Logo</div>
-        <div className="flex items-center gap-10">
-          {navItems.map((item, index) => {
-            return (
-              <Link key={index} href={`/${item.name}`}>
-                <span className="flex items-center gap-1.5">
-                  {item.icon}
-                  <span>{item.name}</span>
-                </span>
-              </Link>
-            );
-          })}
+    <div className="shadow-md w-full fixed top-0 left-0">
+      <div className="flex items-center w-full justify-between md:justify-evenly bg-black py-2  md:px-10 px-7">
+        <div className="font-bold text-2xl text-white cursor-pointer flex items-center font-[Poppins] ">
+          <span className="text-3xl text-white mr-1"></span>
+          MSR
         </div>
-        <div>Theme</div>
-      </div>
-      {/* Mobile Navigation Icon */}
-      <div className="w-full px-6 h-12 flex items-center justify-between md:hidden">
-        <div>Logo</div>
+
         <div
-          className={`hamburger ${isActive ? "active text-white" : ""}`}
-          onClick={toggleNavbar}
+          onClick={() => setOpen(!open)}
+          className="text-3xlcursor-pointer md:hidden"
         >
-          <span className="bar text-white bg-white"></span>
-          <span className="bar text-white bg-white"></span>
-          <span className="bar text-white bg-white"></span>
-        </div>
-      </div>
-
-      {/* Mobile Navigation Menu */}
-
-      {isActive ? (
-        <nav className="w-full left-0 fixed h-screen transition-all bg-black duration-700">
-          <div className="ml-9 mt-9">
-            <div className="flex flex-col gap-6">
-              {navItems.map((item, index) => {
-                return (
-                  <Link
-                    key={index}
-                    href={`/${item.name}`}
-                    onClick={toggleNavbar}
-                    className={
-                      isActive
-                        ? "nav-link slide-in-left-animation capitalize"
-                        : "slide-out-right-animation"
-                    }
-                  >
-                    <span className="flex items-center gap-5">
-                      {item.icon}
-                      <span className="text-lg">{item.name}</span>
-                    </span>
-                  </Link>
-                );
-              })}
-            </div>
+          <div
+            className={`hamburger ${open ? "active" : ""}`}
+            onClick={() => setOpen(!open)}
+          >
+            <span className="bar text-white bg-white"></span>
+            <span className="bar text-white bg-white"></span>
+            <span className="bar text-white bg-white"></span>
           </div>
-        </nav>
-      ) : (
-        <div className="w-full left-[-100%] fixed bg-black transition-all duration-700"></div>
-      )}
+        </div>
+
+        <ul
+          className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-black md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${
+            open ? "top-12 " : "top-[-490px]"
+          }`}
+        >
+          {navItems.map((link) => (
+            <li key={link.name} className="md:ml-8 text-xl md:my-0 my-7">
+              <Link
+                href={link.name}
+                className="text-gray-100 capitalize hover:text-gray-400 duration-500"
+              >
+                {link.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <button className="text-white hidden md:block">
+          <CiLight />
+        </button>
+      </div>
     </div>
   );
 };
