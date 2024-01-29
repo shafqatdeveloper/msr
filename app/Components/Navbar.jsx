@@ -9,72 +9,52 @@ import { MdClose } from "react-icons/md";
 import { CiMenuFries } from "react-icons/ci";
 import { HiOutlineSquares2X2 } from "react-icons/hi2";
 import Link from "next/link";
-
+import "./Navbar.css";
 const Navbar = () => {
-  const [isNavOpen, setisNavOpen] = useState(false);
-  console.log(isNavOpen);
-  const handleNav = () => {
-    setisNavOpen(!isNavOpen);
+  const [isActive, setIsActive] = useState(false);
+
+  const toggleNavbar = () => {
+    setIsActive(!isActive);
   };
+  const navItems = [
+    { name: "Skills", icon: <LiaBuromobelexperte /> },
+    { name: "Projects", icon: <BiCube /> },
+    { name: "Experience", icon: <HiOutlineSquares2X2 /> },
+    { name: "Education", icon: <TbSchool /> },
+    { name: "Resume", icon: <LiaClipboardListSolid /> },
+  ];
   return (
-    <div className="w-full flex items-center justify-center">
-      {/* Desktop Menu */}
-      <div className="hidden md:flex items-center h-12 border-b-[1px] border-gray-800 w-full justify-between px-10 py-2">
-        {/* Logo */}
-        <div>
-          <Link href={"/"}>
-            <span></span>
-            Logo
-          </Link>
-        </div>
-        {/* Navigation Pages */}
-        <div className="flex items-center  gap-8">
-          <Link className="flex items-center gap-2" href={"/skills"}>
-            <LiaBuromobelexperte />
-            Skills
-          </Link>
-          <Link className="flex items-center gap-2" href={"/projects"}>
-            <BiCube />
-            Projects
-          </Link>
-          <Link className="flex items-center gap-2" href={"/experience"}>
-            <HiOutlineSquares2X2 />
-            Experience
-          </Link>
-          <Link className="flex items-center gap-2" href={"/education"}>
-            <TbSchool />
-            Education
-          </Link>
-          <Link className="flex items-center gap-2" href={"/resume"}>
-            <LiaClipboardListSolid />
-            Resume
-          </Link>
-        </div>
-        {/* Themes */}
+    <div className="bg-black w-full mx-auto px-4 text-white">
+      {/* Logo */}
+      <div className="w-full h-16 md:flex items-center justify-evenly hidden">
+        <div>Logo</div>
+        <div>Nav Options</div>
         <div>Theme</div>
       </div>
-      <div className="w-full flex  items-center justify-between md:hidden py-2 px-3">
-        <div>code</div>
+      {/* Mobile Navigation Icon */}
+      <div className="w-full h-12 flex items-center justify-between md:hidden">
         <div>Logo</div>
-        <div>
-          <button className="" onClick={handleNav}>
-            <CiMenuFries />
-          </button>
-          {isNavOpen ? (
-            <div className="h-screen bg-white w-full text-black  duration-700">
-              <div className="w-full flex items-center justify-between md:hidden py-2 px-3">
-                <div>code</div>
-                <div>Logo</div>
-                <button className="" onClick={handleNav}>
-                  <MdClose />
-                </button>
-              </div>
-            </div>
-          ) : (
-            <div className="h-screen bg-white text-black w-full duration-700 "></div>
-          )}
+        <div
+          className={`hamburger ${isActive ? "active text-white" : ""}`}
+          onClick={toggleNavbar}
+        >
+          <span className="bar text-white bg-white"></span>
+          <span className="bar text-white bg-white"></span>
+          <span className="bar text-white bg-white"></span>
         </div>
       </div>
+
+      {/* Mobile Navigation Menu */}
+
+      {isActive ? (
+        <nav className="w-full left-0 fixed h-screen transition-all bg-black duration-700">
+          <ul>
+            <li>Skills</li>
+          </ul>
+        </nav>
+      ) : (
+        <div className="w-full left-[-100%] bg-black transition-all duration-700"></div>
+      )}
     </div>
   );
 };
