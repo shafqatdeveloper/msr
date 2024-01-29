@@ -49,7 +49,7 @@ const Navbar = () => {
         >
           <ul className="border-b-[1px] flex flex-col gap-6 pb-4 md:flex-row lg:gap-11 mt-10 md:mt-0 md:pb-0 md:border-b-0  border-b-gray-700">
             {navItems.map((link) => (
-              <li key={`/${link.name}`}>
+              <li    onClick={() => setOpen(!open)} key={`/${link.name}`}>
                 <Link
                   href={link.name}
                   className="text-gray-100 capitalize flex items-center gap-3 md:gap-2.5 hover:text-gray-400 duration-500"
@@ -60,7 +60,7 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
-          <button className="text-white md:hidden">
+          <button className="text-white mt-5 md:hidden">
             <CiLight />
           </button>
         </div>
