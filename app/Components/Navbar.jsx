@@ -53,7 +53,7 @@ const Navbar = () => {
         {/* Themes */}
         <div>Theme</div>
       </div>
-      <div className="w-full flex items-center justify-between md:hidden py-2 px-3">
+      <div className="w-full z-20 flex  items-center justify-between md:hidden py-2 px-3">
         <div>code</div>
         <div>Logo</div>
         <div>
