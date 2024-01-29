@@ -31,10 +31,10 @@
       opacity: 1;
     }
   }
-.slide-in-right-animation {
-    animation: slideInRight 0.3s ease-in backwards;
+  .slide-out-right-animation {
+    animation: slideOutRight 0.7s ease-in forwards;
   }
-@keyframes slideInRight {
+  @keyframes slideOutRight {
     from {
       transform: translateX(0);
       opacity: 1;

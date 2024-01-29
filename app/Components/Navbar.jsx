@@ -70,7 +70,7 @@ const Navbar = () => {
                     className={
                       isActive
                         ? "nav-link slide-in-left-animation capitalize"
-                        : "slide-in-right-animation"
+                        : "slide-out-right-animation"
                     }
                   >
                     <span className="flex items-center gap-5">
