@@ -1,6 +1,9 @@
 import React from "react";
 import Education from "../Components/Education/Education";
 
+export const metadata = {
+  title: "MSR | Education",
+};
 const page = () => {
   return (
     <div>
