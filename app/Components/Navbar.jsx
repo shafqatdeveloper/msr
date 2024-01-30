@@ -4,9 +4,9 @@ import { LiaBuromobelexperte } from "react-icons/lia";
 import { LiaClipboardListSolid } from "react-icons/lia";
 import { TbSchool } from "react-icons/tb";
 import { BiCube } from "react-icons/bi";
-import { CiLight } from "react-icons/ci";
-import { FaMoon } from "react-icons/fa6";
 import { HiOutlineSquares2X2 } from "react-icons/hi2";
+import { MdClose } from "react-icons/md";
+import { CiMenuBurger } from "react-icons/ci";
 import Link from "next/link";
 import "./Navbar.css";
 import { useTheme } from "next-themes";
@@ -16,44 +16,52 @@ const Navbar = () => {
   const { theme, setTheme } = useTheme();
   console.log(theme);
   const navItems = [
-    { name: "skills", icon: <LiaBuromobelexperte size={20} /> },
-    { name: "projects", icon: <BiCube size={20} /> },
-    { name: "experience", icon: <HiOutlineSquares2X2 size={20} /> },
-    { name: "education", icon: <TbSchool size={20} /> },
-    { name: "resume", icon: <LiaClipboardListSolid size={20} /> },
+    { name: "skills", icon: <LiaBuromobelexperte size={17} /> },
+    { name: "projects", icon: <BiCube size={17} /> },
+    { name: "experience", icon: <HiOutlineSquares2X2 size={17} /> },
+    { name: "education", icon: <TbSchool size={17} /> },
+    { name: "resume", icon: <LiaClipboardListSolid size={17} /> },
   ];
   return (
-    <div className="shadow-md w-full fixed top-0 left-0">
-      <div className="flex items-center w-full justify-between lg:justify-evenly bg-black py-2  lg:px-10 px-7">
+    <div
+      className={
+        theme === "dark"
+          ? "w-full fixed border-b-[0.5px] border-b-gray-700 top-0 left-0"
+          : "w-full border-b-[0.5px] border-b-gray-200 fixed  top-0 left-0"
+      }
+    >
+      <div className="flex items-center w-full justify-between lg:justify-evenly py-1  lg:px-10 px-7">
         <div
           onClick={() => setOpen(false)}
-          className="font-bold text-2xl text-white cursor-pointer flex items-center font-[Poppins] "
+          className="font-bold text-2xl cursor-pointer flex items-center font-[Poppins] "
         >
           <Link href={"/"}>
-            <span className="text-3xl text-white mr-1"></span>
+            <span className="text-3xl mr-1"></span>
             MSR
           </Link>
         </div>
 
         <div
           onClick={() => setOpen(!open)}
-          className="text-3xlcursor-pointer lg:hidden"
+          className="text-xl cursor-pointer lg:hidden"
         >
           <div
-            className={`hamburger ${open ? "active" : ""}`}
+            className={`hamburger ${open ? "active " : ""}`}
             onClick={() => setOpen(!open)}
           >
-            <span className="bar text-white bg-white"></span>
-            <span className="bar text-white bg-white"></span>
-            <span className="bar text-white bg-white"></span>
+            {open ? (
+              <MdClose className="cursor-pointer" />
+            ) : (
+              <CiMenuBurger className="cursor-pointer" />
+            )}
           </div>
         </div>
         <div
-          className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-black md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 transition-all duration-500 ease-in ${
-            open ? "top-12 " : "top-[-490px]"
+          className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 transition-all duration-500 ease-in ${
+            open ? "top-[46px] backdrop-blur-3xl h-[90vh]" : "top-[-490px]"
           }`}
         >
-          <ul className="flex flex-col pb-4 md:flex-row lg:gap-11 mt-10 md:mt-0 md:pb-0">
+          <ul className="flex flex-col pb-4 md:flex-row lg:gap-7 mt-10 md:mt-0 md:pb-0">
             {navItems.map((link) => (
               <li
                 className=" dark:hover:bg-white/10 py-2 pl-7 hover:bg-gray-200 w-full"
@@ -62,17 +70,19 @@ const Navbar = () => {
               >
                 <Link
                   href={link.name}
-                  className="text-gray-100 w-full capitalize flex items-center gap-3 md:gap-2.5 hover:text-gray-400 duration-500"
+                  className="w-full capitalize flex items-center gap-3 md:gap-2.5 duration-500"
                 >
-                  {link.icon}
-                  <span className="text-lg">{link.name}</span>
+                  <span className="">{link.icon}</span>
+                  <span className="tracking-wider md:tracking-wide">
+                    {link.name}
+                  </span>
                 </Link>
               </li>
             ))}
           </ul>
           <div
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="text-white cursor-pointer dark:hover:bg-white/10 py-3 mt-8 hover:bg-gray-200 pl-7 flex items-center gap-2 md:hidden"
+            className="cursor-pointer dark:hover:bg-white/10 py-2.5 mt-8 hover:bg-gray-200 pl-7 flex items-center gap-2 md:hidden"
           >
             <ThemeSwitch />
             {theme === "dark" ? (
@@ -82,7 +92,7 @@ const Navbar = () => {
             )}
           </div>
         </div>
-        <div className="text-white hidden md:block">
+        <div className=" hidden md:block">
           <ThemeSwitch />
         </div>
       </div>

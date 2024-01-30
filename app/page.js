@@ -1,9 +1,10 @@
 import Navbar from "./Components/Navbar";
+import HomePage from "./Components/Home/Home";
 
 export default function Home() {
   return (
-    <main className="mt-12">
-      <h1>Home Page</h1>
+    <main className="pt-20 md:pt-6">
+      <HomePage />
     </main>
   );
 }
