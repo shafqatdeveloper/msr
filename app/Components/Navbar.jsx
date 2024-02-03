@@ -56,7 +56,9 @@ const Navbar = () => {
         </div>
         <div
           className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 transition-all duration-500 ease-in ${
-            open ? "top-[46px] backdrop-blur-3xl" : "top-[-490px]"
+            open
+              ? "top-[46px] text-black dark:text-white  dark:bg-black bg-[#ffffff] h-[90vh]"
+              : "top-[-490px] text-black dark:text-white  dark:bg-black bg-[#ffffff]"
           }`}
         >
           <ul className="flex flex-col pb-4 md:flex-row lg:gap-7 gap-6 mt-10 md:mt-0 md:pb-0">
@@ -80,7 +82,7 @@ const Navbar = () => {
           </ul>
           <div
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="cursor-pointer dark:hover:bg-white/10 z-30 py-2.5 mt-8 hover:bg-gray-200 pl-7 flex items-center gap-2 md:hidden"
+            className="cursor-pointer dark:hover:bg-white/10 py-2.5 mt-8 hover:bg-gray-200 pl-7 flex items-center gap-2 md:hidden"
           >
             <ThemeSwitch />
             {theme === "dark" ? (

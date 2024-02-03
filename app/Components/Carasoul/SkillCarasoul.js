@@ -18,7 +18,7 @@ const SkillCarasoul = () => {
   ];
   return (
     <div className="w-full h-full">
-      <Carousel
+      {/* <Carousel
         navButtonsAlwaysVisible={true}
         PrevIcon={
           <IoMdArrowDropleft className="text-black dark:text-white border-[1px] border-gray-300 dark:border-[#36414e] rounded-full" />
@@ -29,17 +29,17 @@ const SkillCarasoul = () => {
         indicators={false}
         // height="155px"
         interval={2000}
-      >
-        {items.map((item, i) => (
-          <div
-            className="flex items-center justify-center flex-col gap-2"
-            key={i}
-          >
-            <img className="w-40 h-32" src={item.picId} />
-            <h1>{item.name}</h1>
-          </div>
-        ))}
-      </Carousel>
+      > */}
+      {items.map((item, i) => (
+        <div
+          className="flex items-center justify-center flex-col gap-2"
+          key={i}
+        >
+          {/* <img className="w-40 h-32" src={item.picId} /> */}
+          <h1>{item.name}</h1>
+        </div>
+      ))}
+      {/* </Carousel> */}
     </div>
   );
 };
