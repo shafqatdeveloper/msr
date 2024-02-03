@@ -25,9 +25,7 @@ const Navbar = () => {
   return (
     <div
       className={
-        theme === "dark"
-          ? "w-full fixed border-b-[0.5px] border-b-gray-700 top-0 left-0"
-          : "w-full border-b-[0.5px] border-b-gray-200 fixed  top-0 left-0"
+        "w-full fixed border-b-[0.5px] dark:border-b-gray-700 border-b-gray-400 bg-[#ffffff] text-black dark:text-white  dark:bg-black top-0 left-0"
       }
     >
       <div className="flex items-center w-full justify-between lg:justify-evenly py-1  lg:px-10 px-7">
@@ -82,7 +80,7 @@ const Navbar = () => {
           </ul>
           <div
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="cursor-pointer dark:hover:bg-white/10 py-2.5 mt-8 hover:bg-gray-200 pl-7 flex items-center gap-2 md:hidden"
+            className="cursor-pointer dark:hover:bg-white/10 z-30 py-2.5 mt-8 hover:bg-gray-200 pl-7 flex items-center gap-2 md:hidden"
           >
             <ThemeSwitch />
             {theme === "dark" ? (

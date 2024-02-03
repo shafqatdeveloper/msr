@@ -12,10 +12,15 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html suppressHydrationWarning lang="en">
+    <html
+      className="light"
+      style={{ colorScheme: "light" }}
+      suppressHydrationWarning
+      lang="en"
+    >
       <body className={inter.className}>
         <Theme>
-          <Navbar />
+          {/* <Navbar /> */}
           {children}
         </Theme>
       </body>

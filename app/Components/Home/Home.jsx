@@ -8,10 +8,11 @@ import {
   FaTwitter,
 } from "react-icons/fa";
 import { TbBrandLeetcode } from "react-icons/tb";
+import SkillCarasoul from "../Carasoul/SkillCarasoul";
 
 const HomePage = () => {
   return (
-    <div className="w-full h-[90vh] gap-20 flex items-center flex-col md:flex-row">
+    <div className="w-full pt-10 md:pt-0 gap-20 flex items-center flex-col md:flex-row">
       <div className="flex w-full md:w-3/5 gap-4 flex-col items-start lg:ml-32 md:ml-12 ml-0 px-5 md:px-0 justify-start">
         <h1 className="lg:text-6xl sm:text-5xl text-4xl font-bold tracking-wider">
           M SHAFQAT R,
@@ -32,7 +33,9 @@ const HomePage = () => {
           <TbBrandLeetcode size={20} className="cursor-pointer" />
         </div>
       </div>
-      <div>Skills List</div>
+      <div className="w-full md:w-[30%] flex items-center justify-center">
+        <SkillCarasoul />
+      </div>
     </div>
   );
 };
