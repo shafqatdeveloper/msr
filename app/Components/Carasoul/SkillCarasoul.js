@@ -31,15 +31,7 @@ const SkillCarasoul = () => {
         grabCursor={true}
         loop={true}
         slidesPerView={1}
-        modules={[Navigation, Pagination, Autoplay]}
-        autoplay={{
-          delay: 1000, // Delay between transitions in milliseconds
-          disableOnInteraction: false, // Stop autoplay on interaction
-          pauseOnMouseEnter: true, // Pause on mouse hover
-          reverseDirection: false, // Set to true for reverse direction
-          stopOnLastSlide: false, // Set to true to stop on the last slide
-          waitForTransition: true,
-        }}
+        modules={[Navigation, Pagination]}
         navigation={{
           nextEl: ".next-btn",
           prevEl: ".prev-btn",
