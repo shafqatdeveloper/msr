@@ -1,7 +1,13 @@
 "use client";
 import React from "react";
-import Carousel from "react-material-ui-carousel";
-import { IoMdArrowDropleft, IoMdArrowDropright } from "react-icons/io";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
 const SkillCarasoul = () => {
   var items = [
@@ -17,29 +23,42 @@ const SkillCarasoul = () => {
     },
   ];
   return (
-    <div className="w-full h-full">
-      {/* <Carousel
-        navButtonsAlwaysVisible={true}
-        PrevIcon={
-          <IoMdArrowDropleft className="text-black dark:text-white border-[1px] border-gray-300 dark:border-[#36414e] rounded-full" />
-        }
-        NextIcon={
-          <IoMdArrowDropright className="text-black dark:text-white border-[1px] border-gray-300 dark:border-[#36414e] rounded-full" />
-        }
-        indicators={false}
-        // height="155px"
-        interval={2000}
-      > */}
-      {items.map((item, i) => (
-        <div
-          className="flex items-center justify-center flex-col gap-2"
-          key={i}
-        >
-          {/* <img className="w-40 h-32" src={item.picId} /> */}
-          <h1>{item.name}</h1>
-        </div>
-      ))}
-      {/* </Carousel> */}
+    <div className="w-64 flex items-center gap-3 h-full">
+      <div className="prev-btn rounded-full p-1 flex justify-center border-[1px] border-gray-300 dark:border-gray-600 items-center cursor-pointer">
+        <MdKeyboardArrowLeft className="hover:scale-125 active:scale-100 transition-all duration-300" />
+      </div>
+      <Swiper
+        grabCursor={true}
+        loop={true}
+        slidesPerView={1}
+        modules={[Navigation, Pagination, Autoplay]}
+        autoplay={{
+          delay: 1000, // Delay between transitions in milliseconds
+          disableOnInteraction: false, // Stop autoplay on interaction
+          pauseOnMouseEnter: true, // Pause on mouse hover
+          reverseDirection: false, // Set to true for reverse direction
+          stopOnLastSlide: false, // Set to true to stop on the last slide
+          waitForTransition: true,
+        }}
+        navigation={{
+          nextEl: ".next-btn",
+          prevEl: ".prev-btn",
+          clickable: true,
+        }}
+        className="flex"
+      >
+        {items.map((item, i) => (
+          <SwiperSlide>
+            <div className="flex flex-col items-center justify-center gap-2">
+              <img className="w-36 h-32" src={item.picId} />
+              <h1 className="flex items-center justify-center">{item.name}</h1>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+      <div className="next-btn rounded-full p-1 flex justify-center border-[1px] border-gray-300 dark:border-gray-600 items-center cursor-pointer">
+        <MdKeyboardArrowRight className="hover:scale-125 active:scale-100 transition-all duration-300" />
+      </div>
     </div>
   );
 };

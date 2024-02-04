@@ -17,7 +17,7 @@ const HomePage = () => {
         <h1 className="lg:text-6xl sm:text-5xl text-4xl font-bold tracking-wider">
           M SHAFQAT R,
         </h1>
-        <p className="lg:w-2/3 sm:w-4/5">
+        <p className="sm:w-[90%]">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti,
           rerum. Debitis accusantium deleniti enim iste dignissimos? Similique,
           exercitationem! Odit vero, numquam quae ratione maxime sunt reiciendis
@@ -33,7 +33,7 @@ const HomePage = () => {
           <TbBrandLeetcode size={20} className="cursor-pointer" />
         </div>
       </div>
-      <div className="w-full md:w-[30%] flex items-center justify-center">
+      <div className="w-full md:w-[40%] flex items-center justify-center md:justify-start">
         <SkillCarasoul />
       </div>
     </div>
