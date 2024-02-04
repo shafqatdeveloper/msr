@@ -23,7 +23,7 @@ const SkillCarasoul = () => {
     },
   ];
   return (
-    <div className="w-64 z-auto flex items-center gap-3 h-full">
+    <div className="w-64 flex items-center gap-3 h-full">
       <div className="prev-btn rounded-full p-1 flex justify-center border-[1px] border-gray-300 dark:border-gray-600 items-center cursor-pointer">
         <MdKeyboardArrowLeft className="hover:scale-125 active:scale-100 transition-all duration-300" />
       </div>
@@ -31,7 +31,15 @@ const SkillCarasoul = () => {
         grabCursor={true}
         loop={true}
         slidesPerView={1}
-        modules={[Navigation, Pagination]}
+        modules={[Navigation, Pagination, Autoplay]}
+        autoplay={{
+          delay: 1500, // Delay between transitions in milliseconds
+          disableOnInteraction: false, // Stop autoplay on interaction
+          pauseOnMouseEnter: true, // Pause on mouse hover
+          reverseDirection: false, // Set to true for reverse direction
+          stopOnLastSlide: false, // Set to true to stop on the last slide
+          waitForTransition: true, // Wait for slide transition to complete
+        }}
         navigation={{
           nextEl: ".next-btn",
           prevEl: ".prev-btn",
