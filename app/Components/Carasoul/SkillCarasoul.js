@@ -23,7 +23,7 @@ const SkillCarasoul = () => {
     },
   ];
   return (
-    <div className="w-64 flex items-center gap-3 h-full">
+    <div className="w-64 z-auto flex items-center gap-3 h-full">
       <div className="prev-btn rounded-full p-1 flex justify-center border-[1px] border-gray-300 dark:border-gray-600 items-center cursor-pointer">
         <MdKeyboardArrowLeft className="hover:scale-125 active:scale-100 transition-all duration-300" />
       </div>

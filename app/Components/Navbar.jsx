@@ -25,10 +25,10 @@ const Navbar = () => {
   return (
     <div
       className={
-        "w-full fixed border-b-[0.5px] dark:border-b-gray-700 border-b-gray-400 bg-[#ffffff] text-black dark:text-white  dark:bg-black top-0 left-0"
+        "w-full fixed border-b-[0.5px] dark:border-b-gray-700 z-20 border-b-gray-400 bg-[#ffffff] text-black dark:text-white  dark:bg-black top-0 left-0"
       }
     >
-      <div className="flex items-center w-full justify-between lg:justify-evenly py-1  lg:px-10 px-7">
+      <div className="flex items-center w-full z-20 justify-between lg:justify-evenly py-1  lg:px-10 px-7">
         <div
           onClick={() => setOpen(false)}
           className="font-bold text-2xl cursor-pointer flex items-center font-[Poppins] "
@@ -57,14 +57,14 @@ const Navbar = () => {
         <div
           className={`md:flex md:items-center md:pb-0 pb-12 absolute z-20 md:static md:z-auto left-0 w-full md:w-auto md:pl-0 transition-all duration-500 ease-in ${
             open
-              ? "top-[46px] z-30 text-black dark:text-white  dark:bg-black bg-[#ffffff] h-[90vh]"
-              : "top-[-490px] text-black dark:text-white  dark:bg-black bg-[#ffffff]"
+              ? "top-[46px] z-20 text-black dark:text-white dark:bg-black bg-[#ffffff] h-[90vh]"
+              : "top-[-490px] z-20 text-black dark:text-white  dark:bg-black bg-[#ffffff]"
           }`}
         >
-          <ul className="flex flex-col pb-4 md:flex-row lg:gap-7 gap-6 mt-10 md:mt-0 md:pb-0">
+          <ul className="flex flex-col z-20 pb-4 md:flex-row lg:gap-7 gap-6 mt-10 md:mt-0 md:pb-0">
             {navItems.map((link) => (
               <li
-                className=" dark:hover:bg-white/10 py-2 pl-7 md:pl-1 md:pr-1 hover:bg-gray-400 w-full"
+                className=" dark:hover:bg-white/10 z-20 py-2 pl-7 md:pl-1 md:pr-1 hover:bg-gray-400 w-full"
                 onClick={() => setOpen(!open)}
                 key={`/${link.name}`}
               >
