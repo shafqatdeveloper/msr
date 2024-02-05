@@ -66,7 +66,7 @@ const HomePage = () => {
           </Link>
         </div>
       </div>
-      <div className="w-full md:w-[40%] flex items-center justify-center md:justify-start">
+      <div className="w-full h-full md:w-[40%] flex items-center justify-center md:justify-start">
         <SkillCarasoul />
       </div>
     </div>

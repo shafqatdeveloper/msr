@@ -1,54 +1,45 @@
+import ReactDark from "../../../../public/images/RD.png";
+import ReactLight from "../../../../public/images/RL.png";
+import NextDark from "../../../../public/images/ND.png";
+import NextLight from "../../../../public/images/NL.png";
+import MernDark from "../../../../public/images/MD.png";
+import MernLight from "../../../../public/images/ML.png";
+import CDark from "../../../../public/images/CD.png";
+import CLight from "../../../../public/images/CL.png";
+
 export const DarkPics = [
   {
     name: "REACT JS",
-    skillPic:
-      "https://res.cloudinary.com/daxuxn2ec/image/upload/v1707113632/ReactDark_rstve1.png",
+    skillPic: ReactDark,
   },
   {
     name: "NEXT JS",
-    skillPic:
-      "https://res.cloudinary.com/daxuxn2ec/image/upload/v1707113631/NextDark_e2sbfk.png",
+    skillPic: NextDark,
   },
   {
     name: "MERN Stack",
-    skillPic:
-      "https://res.cloudinary.com/daxuxn2ec/image/upload/v1707113630/MERNLight_lmmpjj.jpg",
+    skillPic: MernDark,
   },
   {
     name: "C++",
-    skillPic:
-      "https://res.cloudinary.com/daxuxn2ec/image/upload/v1707113631/C_otk7os.png",
-  },
-  {
-    name: "SASS",
-    skillPic:
-      "https://res.cloudinary.com/daxuxn2ec/image/upload/v1707113633/SASS_jlvjlk.png",
+    skillPic: CDark,
   },
 ];
 export const lightPics = [
   {
     name: "REACT JS",
-    skillPic:
-      "https://res.cloudinary.com/daxuxn2ec/image/upload/v1707113632/ReactLight_cn2d0d.png",
+    skillPic: ReactLight,
   },
   {
     name: "NEXT JS",
-    skillPic:
-      "https://res.cloudinary.com/daxuxn2ec/image/upload/v1707113631/NEXTLight_supn1g.png",
+    skillPic: NextLight,
   },
   {
     name: "MERN Stack",
-    skillPic:
-      "https://res.cloudinary.com/daxuxn2ec/image/upload/v1707113630/MERNLight_lmmpjj.jpg",
+    skillPic: MernLight,
   },
   {
     name: "C++",
-    skillPic:
-      "https://res.cloudinary.com/daxuxn2ec/image/upload/v1707113631/C_otk7os.png",
-  },
-  {
-    name: "SASS",
-    skillPic:
-      "https://res.cloudinary.com/daxuxn2ec/image/upload/v1707113633/SASS_jlvjlk.png",
+    skillPic: CLight,
   },
 ];

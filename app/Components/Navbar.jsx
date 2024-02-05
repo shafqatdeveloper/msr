@@ -11,6 +11,9 @@ import Link from "next/link";
 import "./Navbar.css";
 import { useTheme } from "next-themes";
 import ThemeSwitch from "./Theme/ThemeSwitch";
+import DarkModeLogo from "../../public/images/DarkModeLogo.png";
+import LightModeLogo from "../../public/images/LightModeLogo.png";
+import Image from "next/image";
 const Navbar = () => {
   let [open, setOpen] = useState(false);
   const { theme, setTheme } = useTheme();
@@ -34,8 +37,11 @@ const Navbar = () => {
           className="font-bold text-2xl cursor-pointer flex items-center font-[Poppins] "
         >
           <Link href={"/"}>
-            <span className="text-3xl mr-1"></span>
-            MSR
+            {theme === "dark" ? (
+              <Image width={60} src={DarkModeLogo} />
+            ) : (
+              <Image width={60} src={LightModeLogo} />
+            )}
           </Link>
         </div>
 

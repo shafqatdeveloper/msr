@@ -7,9 +7,12 @@ export const metadata = {
 };
 const page = () => {
   return (
-    <main className="h-screen flex flex-col text-black dark:text-white  dark:bg-black bg-[#ffffff]">
+    <main className="h-full flex flex-col text-black dark:text-white  dark:bg-black bg-[#ffffff]">
       <div>
         <Navbar />
+      </div>
+      <div>
+        <Education />
       </div>
     </main>
   );
