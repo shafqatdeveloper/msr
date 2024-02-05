@@ -1,5 +1,6 @@
 import React from "react";
 import Experience from "../Components/Experience/Experience";
+import Navbar from "../Components/Navbar";
 
 export const metadata = {
   title: "MSR | Experience",
@@ -7,9 +8,11 @@ export const metadata = {
 
 const page = () => {
   return (
-    <div>
-      <Experience />
-    </div>
+    <main className="h-screen flex flex-col text-black dark:text-white  dark:bg-black bg-[#ffffff]">
+      <div>
+        <Navbar />
+      </div>
+    </main>
   );
 };
 

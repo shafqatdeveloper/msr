@@ -6,8 +6,9 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
+import { DarkPics, lightPics } from "../Assets/SkillsPic/SkillPics";
+import { useTheme } from "next-themes";
 
 const SkillCarasoul = () => {
   var items = [
@@ -22,6 +23,9 @@ const SkillCarasoul = () => {
         "https://th.bing.com/th/id/R.2ef039f70262dcef634cc410b30fdc44?rik=upWDqT572p1dhw&pid=ImgRaw&r=0",
     },
   ];
+
+  const { theme } = useTheme();
+
   return (
     <div className="w-64 flex items-center gap-3 h-full">
       <div className="prev-btn rounded-full p-1 flex justify-center border-[1px] border-gray-300 dark:border-gray-600 items-center cursor-pointer">
@@ -33,12 +37,12 @@ const SkillCarasoul = () => {
         slidesPerView={1}
         modules={[Navigation, Pagination, Autoplay]}
         autoplay={{
-          delay: 1500, // Delay between transitions in milliseconds
-          disableOnInteraction: false, // Stop autoplay on interaction
-          pauseOnMouseEnter: true, // Pause on mouse hover
-          reverseDirection: false, // Set to true for reverse direction
-          stopOnLastSlide: false, // Set to true to stop on the last slide
-          waitForTransition: true, // Wait for slide transition to complete
+          delay: 1500,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+          reverseDirection: false,
+          stopOnLastSlide: false,
+          waitForTransition: true,
         }}
         navigation={{
           nextEl: ".next-btn",
@@ -47,14 +51,42 @@ const SkillCarasoul = () => {
         }}
         className="flex"
       >
-        {items.map((item, i) => (
+        {theme == "dark"
+          ? DarkPics.map((item, index) => (
+              <SwiperSlide>
+                <div
+                  key={index}
+                  className="flex flex-col items-center justify-center gap-2"
+                >
+                  <img className="w-36 h-32" src={item.skillPic} />
+                  <h1 className="flex items-center justify-center">
+                    {item.name}
+                  </h1>
+                </div>
+              </SwiperSlide>
+            ))
+          : lightPics.map((item, index) => (
+              <SwiperSlide>
+                <div
+                  key={index}
+                  className="flex flex-col items-center justify-center gap-2"
+                >
+                  <img className="w-36 h-32" src={item.skillPic} />
+                  <h1 className="flex items-center justify-center">
+                    {item.name}
+                  </h1>
+                </div>
+              </SwiperSlide>
+            ))}
+
+        {/* {items.map((item, i) => (
           <SwiperSlide>
             <div className="flex flex-col items-center justify-center gap-2">
               <img className="w-36 h-32" src={item.picId} />
               <h1 className="flex items-center justify-center">{item.name}</h1>
             </div>
           </SwiperSlide>
-        ))}
+        ))} */}
       </Swiper>
       <div className="next-btn rounded-full p-1 flex justify-center border-[1px] border-gray-300 dark:border-gray-600 items-center cursor-pointer">
         <MdKeyboardArrowRight className="hover:scale-125 active:scale-100 transition-all duration-300" />
