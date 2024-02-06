@@ -1,3 +1,4 @@
+"use client";
 import ReactDark from "../../../../public/images/RD.png";
 import ReactLight from "../../../../public/images/RL.png";
 import NextDark from "../../../../public/images/ND.png";
@@ -12,6 +13,7 @@ import HTML from "../../../../public/images/html.png";
 import CSS from "../../../../public/images/css.png";
 import JS from "../../../../public/images/js.png";
 import MongoDb from "../../../../public/images/mongdb.png";
+import NextD from "../../../../public/images/NEXTD.png";
 
 export const DarkPics = [
   {
@@ -55,7 +57,7 @@ export const skills = [
   { name: "CSS", skillPic: CSS },
   { name: "Javascript", skillPic: JS },
   { name: "React Js", skillPic: ReactDark },
-  { name: "Next Js", skillPic: Next },
+  { name: "Next Js", skillPic: theme === "dark" ? NextD : Next },
   { name: "MongoDB", skillPic: MongoDb },
   { name: "C++", skillPic: CDark },
   { name: "Adobe Illustrator", skillPic: AdobeIllustrator },

@@ -12,7 +12,7 @@ const page = () => {
       <div>
         <Navbar />
       </div>
-      <div className="pt-10 sm:px-2 md:px-10 lg:px-40">
+      <div className="pt-10 px-4 md:px-10 lg:px-40 pb-14 md:pb-0">
         <Skills />
       </div>
     </main>

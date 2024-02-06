@@ -11,6 +11,7 @@ import { TbBrandLeetcode } from "react-icons/tb";
 import SkillCarasoul from "../Carasoul/SkillCarasoul";
 import TypeWriter from "../TypeWriter/TypeWriter";
 import Link from "next/link";
+import SkillsCube from "../SkillCube/SkillsCube";
 
 const HomePage = () => {
   return (
@@ -67,7 +68,7 @@ const HomePage = () => {
         </div>
       </div>
       <div className="w-full h-full md:w-[40%] flex items-center justify-center md:justify-start">
-        <SkillCarasoul />
+        <SkillsCube />
       </div>
     </div>
   );

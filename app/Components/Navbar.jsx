@@ -36,12 +36,14 @@ const Navbar = () => {
           onClick={() => setOpen(false)}
           className="font-bold text-2xl cursor-pointer flex items-center font-[Poppins] "
         >
-          <Link href={"/"}>
+          <Link className="flex items-center gap-1" href={"/"}>
+            <span className="text-lg font-bold">&lt;</span>
             {theme === "dark" ? (
               <Image width={60} src={DarkModeLogo} />
             ) : (
               <Image width={60} src={LightModeLogo} />
             )}
+            <span className="text-lg font-bold">/&gt;</span>
           </Link>
         </div>
 
@@ -67,24 +69,24 @@ const Navbar = () => {
               : "top-[-490px] z-20 text-black dark:text-white  dark:bg-black bg-[#ffffff]"
           }`}
         >
-          <ul className="flex flex-col z-20 pb-4 md:flex-row lg:gap-7 gap-6 mt-10 md:mt-0 md:pb-0">
+          <ul className="flex flex-col z-20 pb-4 xmd:flex-row xmd:gap-7 gap-6 mt-10 xmd:mt-0 xmd:pb-0">
             {navItems.map((link) => (
               <li
                 className=" dark:hover:bg-white/10 z-20 flex items-center gap-1 py-2 pl-7 xmd:pl-1 md:pr-1 hover:bg-gray-400 w-full"
                 onClick={() => setOpen(!open)}
                 key={`/${link.name}`}
               >
-                <span className="text-lg font-bold">&lt;</span>
                 <Link
                   href={link.name}
-                  className="w-full capitalize flex items-center gap-3 xmd:gap-1.5 duration-500"
+                  className="w-full capitalize flex items-center gap-2 xmd:gap-1.5 duration-500"
                 >
-                  <span className="">{link.icon}</span>
-                  <span className="tracking-wider md:tracking-wide">
-                    {link.name}
+                  <span className="flex items-center gap-1">
+                    <span className="">{link.icon}</span>
+                    <span className="tracking-wider md:tracking-wide">
+                      {link.name}
+                    </span>
                   </span>
                 </Link>
-                <span className="text-lg font-bold">/&gt;</span>
               </li>
             ))}
           </ul>
