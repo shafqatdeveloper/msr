@@ -41,7 +41,7 @@
     }
   }
 
-@media(max-width: 768px){
+@media(max-width: 955px){
     .hamburger{
         display: block;
     }

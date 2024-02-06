@@ -61,34 +61,36 @@ const Navbar = () => {
           </div>
         </div>
         <div
-          className={`md:flex md:items-center md:pb-0 pb-12 absolute z-20 md:static md:z-auto left-0 w-full md:w-auto md:pl-0 transition-all duration-500 ease-in ${
+          className={`xmd:flex xmd:items-center xmd:pb-0 pb-12 absolute z-20 xmd:static xmd:z-auto left-0 w-full xmd:w-auto xmd:pl-0 transition-all duration-500 ease-in ${
             open
-              ? "top-[46px] z-20 text-black dark:text-white dark:bg-black bg-[#ffffff] h-[94vh] md:h-auto"
+              ? "top-[46px] z-20 text-black dark:text-white dark:bg-black bg-[#ffffff] h-[94vh] xmd:h-auto"
               : "top-[-490px] z-20 text-black dark:text-white  dark:bg-black bg-[#ffffff]"
           }`}
         >
           <ul className="flex flex-col z-20 pb-4 md:flex-row lg:gap-7 gap-6 mt-10 md:mt-0 md:pb-0">
             {navItems.map((link) => (
               <li
-                className=" dark:hover:bg-white/10 z-20 py-2 pl-7 md:pl-1 md:pr-1 hover:bg-gray-400 w-full"
+                className=" dark:hover:bg-white/10 z-20 flex items-center gap-1 py-2 pl-7 xmd:pl-1 md:pr-1 hover:bg-gray-400 w-full"
                 onClick={() => setOpen(!open)}
                 key={`/${link.name}`}
               >
+                <span className="text-lg font-bold">&lt;</span>
                 <Link
                   href={link.name}
-                  className="w-full capitalize flex items-center gap-3 md:gap-1.5 duration-500"
+                  className="w-full capitalize flex items-center gap-3 xmd:gap-1.5 duration-500"
                 >
                   <span className="">{link.icon}</span>
                   <span className="tracking-wider md:tracking-wide">
                     {link.name}
                   </span>
                 </Link>
+                <span className="text-lg font-bold">/&gt;</span>
               </li>
             ))}
           </ul>
           <div
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="cursor-pointer dark:hover:bg-white/10 py-2.5 mt-8 hover:bg-gray-200 pl-7 flex items-center gap-2 md:hidden"
+            className="cursor-pointer dark:hover:bg-white/10 py-2.5 mt-8 hover:bg-gray-200 pl-7 flex items-center gap-2 xmd:hidden"
           >
             <ThemeSwitch />
             {theme === "dark" ? (
@@ -98,7 +100,7 @@ const Navbar = () => {
             )}
           </div>
         </div>
-        <div className=" hidden md:block">
+        <div className=" hidden xmd:block">
           <ThemeSwitch />
         </div>
       </div>

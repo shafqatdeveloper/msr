@@ -1,6 +1,7 @@
 import React from "react";
 import { skills } from "../Assets/SkillsPic/SkillPics";
 import Image from "next/image";
+import TagCloud from "TagCloud";
 
 const Skills = () => {
   return (
@@ -13,9 +14,10 @@ const Skills = () => {
           return (
             <div
               key={index}
-              className="h-16 flex items-center justify-between border-[1px] border-gray-400 dark:border-gray-600 rounded-2xl "
+              className="h-[70px] flex items-center justify-between border-[1px] border-gray-400 dark:border-gray-600 rounded-2xl "
             >
               <h1 className="pl-3">{skill.name}</h1>
+
               <Image
                 className="w-20 h-full rounded-tr-2xl rounded-br-2xl object-cover"
                 src={skill.skillPic}
