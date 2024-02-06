@@ -6,6 +6,12 @@ import MernDark from "../../../../public/images/MD.png";
 import MernLight from "../../../../public/images/ML.png";
 import CDark from "../../../../public/images/CD.png";
 import CLight from "../../../../public/images/CL.png";
+import AdobeIllustrator from "../../../../public/images/adobeIllustrator.png";
+import Next from "../../../../public/images/next.png";
+import HTML from "../../../../public/images/html.png";
+import CSS from "../../../../public/images/css.png";
+import JS from "../../../../public/images/js.png";
+import MongoDb from "../../../../public/images/mongdb.png";
 
 export const DarkPics = [
   {
@@ -42,4 +48,15 @@ export const lightPics = [
     name: "C++",
     skillPic: CLight,
   },
+];
+
+export const skills = [
+  { name: "HTML", skillPic: HTML },
+  { name: "CSS", skillPic: CSS },
+  { name: "Javascript", skillPic: JS },
+  { name: "React Js", skillPic: ReactDark },
+  { name: "Next Js", skillPic: Next },
+  { name: "MongoDB", skillPic: MongoDb },
+  { name: "C++", skillPic: CDark },
+  { name: "Adobe Illustrator", skillPic: AdobeIllustrator },
 ];

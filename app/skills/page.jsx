@@ -8,9 +8,12 @@ export const metadata = {
 
 const page = () => {
   return (
-    <main className="h-screen flex flex-col text-black dark:text-white  dark:bg-black bg-[#ffffff]">
+    <main className="min-h-screen flex flex-col text-black dark:text-white  dark:bg-black bg-[#ffffff]">
       <div>
         <Navbar />
+      </div>
+      <div className="pt-10 sm:px-2 md:px-10 lg:px-40">
+        <Skills />
       </div>
     </main>
   );
