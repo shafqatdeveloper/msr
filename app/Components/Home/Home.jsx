@@ -9,22 +9,20 @@ import {
   FaTwitter,
 } from "react-icons/fa";
 import { TbBrandLeetcode } from "react-icons/tb";
-import SkillCarasoul from "../Carasoul/SkillCarasoul";
 import { motion } from "framer-motion";
 import TypeWriter from "../TypeWriter/TypeWriter";
 import Link from "next/link";
 import SkillsCube from "../SkillCube/SkillsCube";
 
-// Define initial and animate states
 const initial = {
-  x: "-100vw", // Start off-screen to the left
-  opacity: 0, // Initially invisible
+  x: "-100vw",
+  opacity: 0,
 };
 
 const animate = {
-  x: 0, // Slide to its final position
-  opacity: 1, // Become fully visible
-  transition: { duration: 1.2, ease: "easeInOut" }, // Customize transition
+  x: 0,
+  opacity: 1,
+  transition: { duration: 1.2, ease: "easeInOut" },
 };
 
 const initialTop = {

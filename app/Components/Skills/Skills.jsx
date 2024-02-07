@@ -12,6 +12,7 @@ import NextD from "../../../public/images/NEXTD.png";
 import CDark from "../../../public/images/CD.png";
 import AdobeIllustrator from "../../../public/images/adobeIllustrator.png";
 import { useTheme } from "next-themes";
+import { motion } from "framer-motion";
 
 const Skills = () => {
   const { theme } = useTheme();
@@ -25,15 +26,33 @@ const Skills = () => {
     { name: "C++", skillPic: CDark },
     { name: "Adobe Illustrator", skillPic: AdobeIllustrator },
   ];
+
+  const headingInitial = {
+    y: "-100vh",
+    opacity: 0,
+  };
+  const headingAnimate = {
+    y: 0,
+    opacity: 1,
+    transition: { duration: 0.5, ease: "easeInOut" },
+  };
+
   return (
     <div className="mt-12 w-full">
-      <h1 className="text-center text-5xl sm:text-6xl font-bold tracking-wider">
+      <motion.h1
+        initial={headingInitial}
+        animate={headingAnimate}
+        className="text-center text-5xl sm:text-6xl font-bold tracking-wider"
+      >
         Skills
-      </h1>
+      </motion.h1>
       <div className="grid grid-cols-1 xs:grid-cols-2 mt-16 md:grid-cols-3 gap-y-4 md:gap-y-5 gap-x-6">
         {skills.map((skill, index) => {
           return (
-            <div
+            <motion.div
+              initial={{ opacity: 0, translateX: -50, translateY: -50 }}
+              animate={{ opacity: 1, translateX: 0, translateY: 0 }}
+              transition={{ duration: 0.1, delay: index * 0.1 }}
               key={index}
               className="h-[70px] relative flex items-center justify-between border-[1px] border-gray-400 dark:border-gray-600 rounded-2xl "
             >
@@ -46,7 +65,7 @@ const Skills = () => {
                 className="w-20 h-full rounded-tr-2xl rounded-br-2xl object-cover"
                 src={skill.skillPic}
               />
-            </div>
+            </motion.div>
           );
         })}
       </div>
