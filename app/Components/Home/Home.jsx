@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import {
   FaFacebook,
@@ -9,17 +10,45 @@ import {
 } from "react-icons/fa";
 import { TbBrandLeetcode } from "react-icons/tb";
 import SkillCarasoul from "../Carasoul/SkillCarasoul";
+import { motion } from "framer-motion";
 import TypeWriter from "../TypeWriter/TypeWriter";
 import Link from "next/link";
 import SkillsCube from "../SkillCube/SkillsCube";
+
+// Define initial and animate states
+const initial = {
+  x: "-100vw", // Start off-screen to the left
+  opacity: 0, // Initially invisible
+};
+
+const animate = {
+  x: 0, // Slide to its final position
+  opacity: 1, // Become fully visible
+  transition: { duration: 1.2, ease: "easeInOut" }, // Customize transition
+};
+
+const initialTop = {
+  y: "-100vh",
+  opacity: 0,
+};
+
+const animateTop = {
+  y: 0,
+  opacity: 1,
+  transition: { duration: 1.2, ease: "easeInOut" },
+};
 
 const HomePage = () => {
   return (
     <div className="w-full pt-10 md:pt-0 gap-20 flex items-center flex-col md:flex-row">
       <div className="flex w-full md:w-3/5 gap-4 flex-col items-start lg:ml-32 md:ml-12 ml-0 px-5 md:px-0 justify-start">
-        <h1 className="lg:text-6xl sm:text-5xl text-4xl font-bold tracking-wider">
+        <motion.h1
+          initial={initial}
+          animate={animate}
+          className="lg:text-6xl sm:text-5xl text-4xl font-bold tracking-wider"
+        >
           M SHAFQAT R,
-        </h1>
+        </motion.h1>
         <div>
           <TypeWriter />
         </div>
@@ -29,7 +58,11 @@ const HomePage = () => {
           Proficient in React.js and Next.js. Skilled in C++ for tackling
           performance-critical tasks and efficient backend operations.
         </p>
-        <div className="flex items-center gap-3.5">
+        <motion.div
+          initial={initial}
+          animate={animate}
+          className="flex items-center gap-3.5"
+        >
           <Link
             href={
               "https://www.linkedin.com/in/muhammad-shafqat-rasool-356540255/"
@@ -65,11 +98,15 @@ const HomePage = () => {
           >
             <FaInstagram size={20} className="cursor-pointer" />
           </Link>
-        </div>
+        </motion.div>
       </div>
-      <div className="w-full h-full md:w-[40%] flex items-center justify-center md:justify-start">
+      <motion.div
+        initial={initialTop}
+        animate={animateTop}
+        className="w-full h-full md:w-[40%] flex items-center justify-center md:justify-start"
+      >
         <SkillsCube />
-      </div>
+      </motion.div>
     </div>
   );
 };

@@ -57,7 +57,7 @@ export const skills = [
   { name: "CSS", skillPic: CSS },
   { name: "Javascript", skillPic: JS },
   { name: "React Js", skillPic: ReactDark },
-  { name: "Next Js", skillPic: theme === "dark" ? NextD : Next },
+  { name: "Next Js", skillPic: Next },
   { name: "MongoDB", skillPic: MongoDb },
   { name: "C++", skillPic: CDark },
   { name: "Adobe Illustrator", skillPic: AdobeIllustrator },
